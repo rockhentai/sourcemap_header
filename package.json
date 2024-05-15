@@ -1,15 +1,16 @@
 {
-  "name": "lsy-sp-ext",
-  "displayName": "Lsy sp ext",
+  "name": "source_map_header",
+  "displayName": "SourceMap Header",
   "version": "0.0.1",
   "description": "A basic Plasmo extension.",
   "author": "lilith shenke@lilith.com",
   "scripts": {
-    "dev": "plasmo dev",
+    "dev": "plasmo dev --target=2",
     "build": "plasmo build",
     "package": "plasmo package"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.6.0",
     "plasmo": "0.85.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -24,8 +25,17 @@
     "typescript": "5.3.3"
   },
   "manifest": {
-    "host_permissions": [
-      "https://*/*"
+    "permissions": [
+      "webRequest",
+      "webRequestBlocking",
+      "<all_urls>"
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "libs/monaco/**/*"
+        ]
+      }
     ]
   }
 }
